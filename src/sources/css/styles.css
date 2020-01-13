@@ -1,0 +1,39 @@
+body {
+    background-color: #a8dba8;
+    padding: 20px;
+    margin: 0;
+}
+h1, h2, p, ul, li {
+    font-family: sans-serif;
+}
+ul.header{
+    background-color:#3b8686;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+ul.header li{
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+}
+ul.header li a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+  }
+.content {
+    background-color: #FFF;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.navbar {
+    width: 30%;
+}
+.modal {
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+  }
