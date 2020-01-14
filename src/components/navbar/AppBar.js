@@ -27,7 +27,8 @@ import MainContent from "../../pages/MainContent";
 import MainContent2 from "../../pages/MainContent2";
 import RegUser from "../../views/RegUser";
 import FetchData from "../data/FetchData";
-import FetchData2 from "../data/Search";
+import FetchData2 from "../data/FetchData2";
+//import FetchData3 from "../data2/Contact";
  
 class AppBar extends Component {
   render() {
@@ -44,13 +45,15 @@ class AppBar extends Component {
             <li>
                 <NavLink to="/reguser">Registrasi User</NavLink>
             </li>
-            
             <li>
                 <NavLink to="/fetchdata">Fetch Data API</NavLink>
             </li>
             <li>
-                <NavLink to="/fetchdata2">Fetch Data API2</NavLink>
+                <NavLink to="/fetchdata2">Fetch Data API 2</NavLink>
             </li>
+            {/* <li>
+                <NavLink to="/fetchdata3">Fetch Data API 3</NavLink>
+            </li> */}
           </ul>
           <div className="content">
             <Route exact path="/">
@@ -68,6 +71,9 @@ class AppBar extends Component {
             <Route path="/fetchdata2">
                 <FetchData2/>
             </Route>
+            {/* <Route path="/fetchdata3">
+                <FetchData3/>
+            </Route> */}
           </div>
         </div>
       </HashRouter>
