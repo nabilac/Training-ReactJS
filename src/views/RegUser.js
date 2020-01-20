@@ -7,7 +7,7 @@ class RegUser extends Component {
         super(props);
         this.state = {
             newUser: {
-                nama: '',
+                name: '',
                 email: '',
                 age: '',
                 gender: ''

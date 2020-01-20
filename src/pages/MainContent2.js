@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Material-UI
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
+// import TextField from '@material-ui/core/TextField';
+// import Grid from '@material-ui/core/Grid';
 
 class MainContent2 extends Component {
     constructor(props) {

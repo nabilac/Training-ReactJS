@@ -28,7 +28,13 @@ import MainContent2 from "../../pages/MainContent2";
 import RegUser from "../../views/RegUser";
 import FetchData from "../data/FetchData";
 import FetchData2 from "../data/FetchData2";
-//import FetchData3 from "../data2/Contact";
+import ReactContext from "../belajarContext/Home";
+import AddContext from "../belajarContext/AddData";
+import ListMahasiswa from "../mahasiswa/Home";
+import AddMahasiswa from "../mahasiswa/AddMahasiswa";
+import Axios from "../axios/list";
+import AddAxios from "../axios/add";
+import DeleteAxios from "../axios/delete";
  
 class AppBar extends Component {
   render() {
@@ -51,9 +57,27 @@ class AppBar extends Component {
             <li>
                 <NavLink to="/fetchdata2">Fetch Data API 2</NavLink>
             </li>
-            {/* <li>
-                <NavLink to="/fetchdata3">Fetch Data API 3</NavLink>
-            </li> */}
+            <li>
+                <NavLink to="/context">React Context</NavLink>
+            </li>
+            <li>
+                <NavLink to="/addContext">Add Context</NavLink>
+            </li>
+            <li>
+                <NavLink to="/listMahasiswa">ListMahasiswa</NavLink>
+            </li>
+            <li>
+                <NavLink to="/addMahasiswa">AddMahasiswa</NavLink>
+            </li>
+            <li>
+                <NavLink to="/listAxios">Axios</NavLink>
+            </li>
+            <li>
+                <NavLink to="/addAxios">Add Axios</NavLink>
+            </li>
+            <li>
+                <NavLink to="/deleteAxios">Delete Axios</NavLink>
+            </li>
           </ul>
           <div className="content">
             <Route exact path="/">
@@ -71,9 +95,27 @@ class AppBar extends Component {
             <Route path="/fetchdata2">
                 <FetchData2/>
             </Route>
-            {/* <Route path="/fetchdata3">
-                <FetchData3/>
-            </Route> */}
+            <Route path="/context">
+                <ReactContext/>
+            </Route>
+            <Route path="/addContext">
+                <AddContext/>
+            </Route>
+            <Route path="/listMahasiswa">
+                <ListMahasiswa/>
+            </Route>
+            <Route path="/addMahasiswa">
+                <AddMahasiswa/>
+            </Route>
+            <Route path="/listAxios">
+                <Axios/>
+            </Route>
+            <Route path="/addAxios">
+                <AddAxios/>
+            </Route>
+            <Route path="/deleteAxios">
+                <DeleteAxios/>
+            </Route>
           </div>
         </div>
       </HashRouter>

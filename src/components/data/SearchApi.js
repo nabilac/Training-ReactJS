@@ -7,7 +7,7 @@ class SeacrhApi extends Component {
     };
 
     fetchUsers(findById) {
-        if (findById == '') {
+        if (findById === '') {
             fetch(`https://jsonplaceholder.typicode.com/users`)
                 .then(response => response.json())
                 .then(data =>(
