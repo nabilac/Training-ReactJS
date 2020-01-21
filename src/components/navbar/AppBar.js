@@ -35,6 +35,7 @@ import AddMahasiswa from "../mahasiswa/AddMahasiswa";
 import Axios from "../axios/list";
 import AddAxios from "../axios/add";
 import DeleteAxios from "../axios/delete";
+import CRUDHOOKS from "../CRUD1/Home";
  
 class AppBar extends Component {
   render() {
@@ -78,6 +79,9 @@ class AppBar extends Component {
             <li>
                 <NavLink to="/deleteAxios">Delete Axios</NavLink>
             </li>
+            <li>
+                <NavLink to="/crudHooks">CRUDHOOKS</NavLink>
+            </li>
           </ul>
           <div className="content">
             <Route exact path="/">
@@ -115,6 +119,9 @@ class AppBar extends Component {
             </Route>
             <Route path="/deleteAxios">
                 <DeleteAxios/>
+            </Route>
+            <Route path="/crudHooks">
+                <CRUDHOOKS/>
             </Route>
           </div>
         </div>

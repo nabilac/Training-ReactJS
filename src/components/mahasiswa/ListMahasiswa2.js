@@ -26,7 +26,8 @@ class ListMahasiswa extends Component {
             angkatan: '',
             konsentrasi: '',
             items: [],
-            open: false
+            open: false,
+            data: {}
         }
 
     }
@@ -60,7 +61,7 @@ class ListMahasiswa extends Component {
         console.log(params)
     }
 
-    updateData = () => {
+    updateData = (nim) => {
         const params = new URLSearchParams();
         params.append('nim', this.state.nim)
         params.append('nama', this.state.nama)
@@ -70,12 +71,12 @@ class ListMahasiswa extends Component {
         params.append('konsentrasi', this.state.konsentrasi)
         axios({
             method: 'put',
-            url: 'http://localhost/mjt-assessment/rest-server/api/mahasiswa/',
+            url: 'http://localhost/mjt-assessment/rest-server/api/mahasiswa/${nim}',
             data: params
         })
     }
 
-    deleteData(nim) {
+    deleteData=(nim) =>{
         const { items } = this.state;
 
         const params = new URLSearchParams();
@@ -105,7 +106,7 @@ class ListMahasiswa extends Component {
         this.setState(
             (preState) => ({
                 ...preState.data, data: {
-                    nama: param.data.nama
+                    nama: param.nama
                 }
             })
         );
@@ -122,7 +123,7 @@ class ListMahasiswa extends Component {
     };
 
     render() {
-        const { items, open } = this.state
+        const { items, open, data } = this.state
         const { mahasiswas } = this.context
         let result = mahasiswas.length ? mahasiswas : items
         return (
@@ -189,8 +190,27 @@ class ListMahasiswa extends Component {
                                                         <h5>Edit</h5>
                                                     </div>
                                                     <div>
-                                                        <label>NIM : </label>
+                                                        <label>Nama : </label>
                                                         <input type="text" name="nama" value={this.state.nama}/>
+                                                    </div>
+                                                    <div>
+                                                        <label>Kelas : </label>
+                                                        <input type="text" name="kelas" value={this.state.kelas}/>
+                                                    </div>
+                                                    <div>
+                                                        <label>Prodi : </label>
+                                                        <input type="text" name="prodi" value={this.state.prodi}/>
+                                                    </div>
+                                                    <div>
+                                                        <label>Angkatan : </label>
+                                                        <input type="text" name="angkatan" value={this.state.angkatan}/>
+                                                    </div>
+                                                    <div>
+                                                        <label>konsentrasi : </label>
+                                                        <input type="text" name="konsentrasi" value={this.state.konsentrasi}/>
+                                                    </div>
+                                                    <div>
+                                                        <button type="submit" onClick={this.handleEdit}>Update Data</button>
                                                     </div>
                                                 </div>
                                             </Modal>

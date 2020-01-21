@@ -1,4 +1,6 @@
 import React from 'react';
+import MhsContext from './Context/mhsContext';
+
 import axios from 'axios';
 
 class AddMahasiswa extends React.Component {
@@ -15,6 +17,8 @@ class AddMahasiswa extends React.Component {
         };
     }
 
+    static contextType = MhsContext
+
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -22,7 +26,10 @@ class AddMahasiswa extends React.Component {
     }
 
     addData = () => {
+        const { onAdd } = this.context
+
         const params = new URLSearchParams();
+
         params.append('nim', this.state.nim)
         params.append('nama', this.state.nama)
         params.append('kelas', this.state.kelas)
@@ -31,17 +38,17 @@ class AddMahasiswa extends React.Component {
         params.append('konsentrasi', this.state.konsentrasi)
         axios({
             method: 'post',
-            url: 'http://192.168.180.72:83/mjt-assessment/rest-server/api/mahasiswa/',
+            url: 'http://localhost/mjt-assessment/rest-server/api/mahasiswa/',
             data: params
         })
+        .then(data => {
+            let result = Array.isArray(data) ? data : [data]
+
+            onAdd(result)
+        })
+
+        console.log(params)
     }
-
-    // handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const mhsData = this.state.newMhs;
-
-    //     console.log(mhsData)
-    // }
 
     render() {
         return (

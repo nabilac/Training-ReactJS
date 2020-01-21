@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import ListMahasiswa from './ListMahasiswa';
 import ListMahasiswa2 from './ListMahasiswa2';
+import AddMahasiswa from './AddMahasiswa';
 import { MhsProvider } from './Context/mhsContext';
 
 //Material-ui
@@ -10,15 +11,16 @@ import Typography from '@material-ui/core/Typography';
 
 const Home = (props) => {
     const [mahasiswas, setMahasiswas] = useState([])
-    const onSearch = (data) => (
+    const onAdd = (data) => (
         setMahasiswas(data)
     )
     return (
         <>
             <Grid>
-                <MhsProvider value={{ mahasiswas, onSearch }}>
+                <MhsProvider value={{ mahasiswas, onAdd }}>
                     <Typography variant="h4">Daftar Mahasiswa</Typography>
-                    <ListMahasiswa2 />
+                    <AddMahasiswa />
+                    <ListMahasiswa/>
                 </MhsProvider>
             </Grid>
         </>
