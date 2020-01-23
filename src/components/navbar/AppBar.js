@@ -1,26 +1,3 @@
-// import React from 'react';
-// import MainConten from './MainConten';
-
-// const AppBar = (props) => {
-//     return (
-//         <div>
-//             <ul className="header">
-//                 <li>
-//                      Home
-//                 </li>
-//                 <li>
-//                     Halaman 1
-//                 </li>
-//                 <li>
-//                     Halaman 2
-//                 </li>
-//             </ul>
-//         </div>
-//     )
-// }
-
-// export default AppBar
-
 import React, { Component } from "react";
 import { Route, NavLink, HashRouter } from "react-router-dom";
 import MainContent from "../../pages/MainContent";
@@ -29,13 +6,10 @@ import RegUser from "../../views/RegUser";
 import FetchData from "../data/FetchData";
 import FetchData2 from "../data/FetchData2";
 import ReactContext from "../belajarContext/Home";
-import AddContext from "../belajarContext/AddData";
 import ListMahasiswa from "../mahasiswa/Home";
-import AddMahasiswa from "../mahasiswa/AddMahasiswa";
 import Axios from "../axios/list";
-import AddAxios from "../axios/add";
-import DeleteAxios from "../axios/delete";
 import CRUDHOOKS from "../CRUD1/Home";
+import Login from "../login/index";
  
 class AppBar extends Component {
   render() {
@@ -44,7 +18,10 @@ class AppBar extends Component {
         <div>
           <ul className="header">
             <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/">Login</NavLink>
+            </li>
+            <li>
+                <NavLink to="/home">Home</NavLink>
             </li>
             <li>
                 <NavLink to="/daftarUser">Daftar User</NavLink>
@@ -62,22 +39,10 @@ class AppBar extends Component {
                 <NavLink to="/context">React Context</NavLink>
             </li>
             <li>
-                <NavLink to="/addContext">Add Context</NavLink>
-            </li>
-            <li>
                 <NavLink to="/listMahasiswa">ListMahasiswa</NavLink>
             </li>
             <li>
-                <NavLink to="/addMahasiswa">AddMahasiswa</NavLink>
-            </li>
-            <li>
                 <NavLink to="/listAxios">Axios</NavLink>
-            </li>
-            <li>
-                <NavLink to="/addAxios">Add Axios</NavLink>
-            </li>
-            <li>
-                <NavLink to="/deleteAxios">Delete Axios</NavLink>
             </li>
             <li>
                 <NavLink to="/crudHooks">CRUDHOOKS</NavLink>
@@ -85,6 +50,9 @@ class AppBar extends Component {
           </ul>
           <div className="content">
             <Route exact path="/">
+                <Login/>
+            </Route>
+            <Route exact path="/home">
                 <MainContent/>
             </Route>
             <Route path="/daftarUser">
@@ -102,23 +70,11 @@ class AppBar extends Component {
             <Route path="/context">
                 <ReactContext/>
             </Route>
-            <Route path="/addContext">
-                <AddContext/>
-            </Route>
             <Route path="/listMahasiswa">
                 <ListMahasiswa/>
             </Route>
-            <Route path="/addMahasiswa">
-                <AddMahasiswa/>
-            </Route>
             <Route path="/listAxios">
                 <Axios/>
-            </Route>
-            <Route path="/addAxios">
-                <AddAxios/>
-            </Route>
-            <Route path="/deleteAxios">
-                <DeleteAxios/>
             </Route>
             <Route path="/crudHooks">
                 <CRUDHOOKS/>
