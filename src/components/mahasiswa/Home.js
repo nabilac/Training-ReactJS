@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import ListMahasiswa from './ListMahasiswa';
-import ListMahasiswa2 from './ListMahasiswa2';
 import AddMahasiswa from './AddMahasiswa';
 import { MhsProvider } from './Context/mhsContext';
 
